@@ -43,11 +43,23 @@ set wildignore=*.png,*.jpg,*.xcf,*.wav,log/*,tmp/*,coverage/*
 
 let mapleader=','
 
+set pastetoggle=<F2>
+
 noremap ; :
 noremap Y y$
 
 " CoffeeScript settings
 au FileType coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+" Ruby settings
+au BufRead,BufNewFile Guardfile,Vagrantfile,*.arb,*.cr set ft=ruby
+autocmd FileType ruby,eruby,scss,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+" JST settings
+autocmd FileType jst setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+" " YAML settings
+autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " My mappings
 map <C-h> <C-w>h
@@ -74,9 +86,6 @@ let g:ctrlp_prompt_mappings = {
     \ 'CreateNewFile()':      []
     \ }
 
-" ruby refactoring mappings
-
-let g:ruby_refactoring_map_keys = 0
 " vim-rspec
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
@@ -104,11 +113,16 @@ nmap s ys
 map <Leader>gb :Gblame<CR>
 " map <Leader>gd :Gdiff<CR>
 
-" Ruby settings
-au BufRead,BufNewFile Guardfile,Vagrantfile set ft=ruby
-autocmd FileType ruby,eruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-
-
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
 set t_Co=256
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+
+" Fix drawing artifacts
+au BufWritePost * :silent! :syntax sync fromstart<cr>:redraw!<cr>
+
+set pastetoggle=<F12>
