@@ -108,7 +108,3 @@ map <Leader>gb :Gblame<CR>
 au BufRead,BufNewFile Guardfile,Vagrantfile set ft=ruby
 autocmd FileType ruby,eruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
-
-" Powerline settings
-let g:Powerline_symbols = 'fancy'
-set t_Co=256

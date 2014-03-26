@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/home/dziulius/.vim'
+let g:netrw_dirhist_2='/Users/dziulius/Workspace/universal_listing/app/jobs'
+let g:netrw_dirhist_3='/Users/dziulius'
+let g:netrw_dirhist_4='/Users/dziulius/.bash_it'
+let g:netrw_dirhist_5='/Users/dziulius'
+let g:netrw_dirhist_6='/Users/dziulius/.bash_it'
+let g:netrw_dirhist_7='/Users/dziulius/Workspace/ori_demo/app'
+let g:netrw_dirhist_8='/Users/dziulius/Workspace/keyword_trackz/app/jobs'
