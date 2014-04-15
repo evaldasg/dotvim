@@ -7,6 +7,7 @@ colorscheme 256-jungle
 hi clear SignColumn " for gitgutter, nicer looking sign column
 
 let g:HardMode_level = 'wannabe'
+let g:localvimrc_ask = 0
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 " VIM settings
