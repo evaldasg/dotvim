@@ -36,8 +36,9 @@ set number
 set numberwidth=3
 set noacd
 set showcmd
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set expandtab
 set noea
 set mouse=a
 set wildignore=*.png,*.jpg,*.xcf,*.wav,log/*,tmp/*,coverage/*
@@ -114,10 +115,6 @@ nmap s ys
 " Ruby settings
 au BufRead,BufNewFile Guardfile,Vagrantfile set ft=ruby
 autocmd FileType ruby,eruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-
-" Powerline settings
-let g:Powerline_symbols = 'fancy'
-set t_Co=256
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
