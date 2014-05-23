@@ -125,3 +125,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 au BufWritePost * :silent! :syntax sync fromstart<cr>:redraw!<cr>
 
 set pastetoggle=<F12>
+
+" Autoformat json file. Requires `sudo cpan JSON::XS`
+map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
