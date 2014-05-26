@@ -10,6 +10,11 @@ let g:HardMode_level = 'wannabe'
 let g:localvimrc_ask = 0
 autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
+" Enable autoselect clipboard
+set clipboard+=autoselect
+set guioptions+=a
+
+
 " VIM settings
 set nocompatible
 set notimeout
