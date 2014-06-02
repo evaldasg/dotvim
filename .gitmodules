@@ -64,9 +64,6 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
 [submodule "bundle/MatchTag"]
 	path = bundle/MatchTag
 	url = https://github.com/gregsexton/MatchTag.git
@@ -85,3 +82,15 @@
 [submodule "bundle/vim-vinegar"]
 	path = bundle/vim-vinegar
 	url = git://github.com/tpope/vim-vinegar.git
+[submodule "bundle/snip-mate"]
+	path = bundle/snip-mate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "bundle/tlib_vim"]
+	path = bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "bundle/vim-addon-mw-utils"]
+	path = bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
