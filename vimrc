@@ -1,21 +1,22 @@
 execute pathogen#infect()
 
-set nocompatible
-filetype off
 syntax on
 filetype plugin indent on
 
 colorscheme 256-jungle
 hi clear SignColumn " for gitgutter, nicer looking sign column
 
-" let g:HardMode_level = 'wannabe'
-" let g:localvimrc_ask = 0
-" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+let g:HardMode_level = 'wannabe'
+let g:localvimrc_ask = 0
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 
 " VIM settings
-
+set nocompatible
+set notimeout
+set ttimeout
 set timeoutlen=100
+set updatetime=1000
 
 set directory=~/.vim/swp//
 set undodir=~/.vim/undo//
@@ -61,7 +62,7 @@ autocmd FileType ruby,eruby,scss,css setlocal expandtab shiftwidth=2 tabstop=2 s
 " JST settings
 autocmd FileType jst setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
-" YAML settings
+" " YAML settings
 autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " My mappings
@@ -109,11 +110,7 @@ vmap } s}
 vmap # s#
 nmap s ys
 
+
 " Autoformat json file. Requires `sudo cpan JSON::XS`
 map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
 
-
-" Snipmate
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
