@@ -1,21 +1,21 @@
 execute pathogen#infect()
 
+set nocompatible
+filetype off
 syntax on
 filetype plugin indent on
 
 colorscheme 256-jungle
 hi clear SignColumn " for gitgutter, nicer looking sign column
 
-let g:HardMode_level = 'wannabe'
-let g:localvimrc_ask = 0
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+" let g:HardMode_level = 'wannabe'
+" let g:localvimrc_ask = 0
+" autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+
 
 " VIM settings
-set nocompatible
-set notimeout
-set ttimeout
+
 set timeoutlen=100
-set updatetime=1000
 
 set directory=~/.vim/swp//
 set undodir=~/.vim/undo//
@@ -31,7 +31,6 @@ set backupdir=~/.vim/backup//
 set wildmenu wildmode=full
 set completeopt=longest,menuone
 set laststatus=2
-set statusline=%<%f\ %([%Y%M%R%{fugitive#statusline()}]%)%=%-14.(%l,%c%V%)\ %P
 set number
 set numberwidth=3
 set noacd
@@ -42,6 +41,8 @@ set expandtab
 set noea
 set mouse=a
 set wildignore=*.png,*.jpg,*.xcf,*.wav,log/*,tmp/*,coverage/*
+" Enable autoselect clipboard
+set clipboard=autoselect,unnamed
 
 let mapleader=','
 
@@ -60,7 +61,7 @@ autocmd FileType ruby,eruby,scss,css setlocal expandtab shiftwidth=2 tabstop=2 s
 " JST settings
 autocmd FileType jst setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
-" " YAML settings
+" YAML settings
 autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " My mappings
@@ -102,26 +103,17 @@ map <leader>n :e %:p:h<CR>
 " surround settings
 vmap ) s)
 vmap ( s(
-" vmap " s"
 vmap ' s'
 vmap { s{
 vmap } s}
 vmap # s#
 nmap s ys
 
-" Fugitive settings
-" map <Leader>gs :Gstatus<CR>
-" map <Leader>gc :Gcommit<CR>
-" Ruby settings
-au BufRead,BufNewFile Guardfile,Vagrantfile set ft=ruby
-autocmd FileType ruby,eruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" Autoformat json file. Requires `sudo cpan JSON::XS`
+map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
 
 
-" Fix drawing artifacts
-au BufWritePost * :silent! :syntax sync fromstart<cr>:redraw!<cr>
-
-set pastetoggle=<F12>
+" Snipmate
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
