@@ -3,7 +3,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-colorscheme 256-jungle
+set t_Co=256
+set background=light
+colorscheme solarized
 hi clear SignColumn " for gitgutter, nicer looking sign column
 
 let g:HardMode_level = 'wannabe'
@@ -25,7 +27,6 @@ set noswapfile
 set path+=./lib,./spec
 set shell=/bin/sh
 set swb=useopen
-set background=light
 set tags+=tags;/,./gems.tags;/,gems.tags;/
 set hidden
 set backupdir=~/.vim/backup//
