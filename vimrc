@@ -42,6 +42,7 @@ set shiftwidth=2
 set expandtab
 set noea
 set mouse=a
+set ttymouse=xterm2
 set wildignore=*.png,*.jpg,*.xcf,*.wav,log/*,tmp/*,coverage/*
 " Enable autoselect clipboard
 set clipboard=autoselect,unnamed
