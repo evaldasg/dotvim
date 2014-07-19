@@ -19,6 +19,7 @@ set notimeout
 set ttimeout
 set timeoutlen=100
 set updatetime=1000
+set backspace=2 " make backspace work like most other apps
 
 set directory=~/.vim/swp//
 set undodir=~/.vim/undo//
@@ -115,4 +116,8 @@ nmap s ys
 
 " Autoformat json file. Requires `sudo cpan JSON::XS`
 map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
+
+" Mapping ESC in insert mode and command mode to double i
+imap ii <C-[>
+cmap ii <C-[>
 
