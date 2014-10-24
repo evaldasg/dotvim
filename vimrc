@@ -104,6 +104,10 @@ let g:rspec_command = "!spring rspec {spec}"
 " NERD Tree settings
 map <leader>n :e %:p:h<CR>
 
+" open a NERDTree automatically when vim starts up if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " surround settings
 vmap ) s)
 vmap ( s(
