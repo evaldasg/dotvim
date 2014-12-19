@@ -5,7 +5,7 @@ filetype plugin indent on
 
 set t_Co=256
 set background=light
-colorscheme solarized
+colorscheme Tomorrow-Night-Eighties
 hi clear SignColumn " for gitgutter, nicer looking sign column
 
 let g:HardMode_level = 'wannabe'
