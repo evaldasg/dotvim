@@ -23,6 +23,7 @@ set backspace=2 " make backspace work like most other apps
 
 set directory=~/.vim/swp//
 set undodir=~/.vim/undo//
+set backupdir=~/.vim/backup//
 set undofile
 set noswapfile
 set path+=./lib,./spec
@@ -30,23 +31,29 @@ set shell=/bin/sh
 set swb=useopen
 set tags+=tags;/,./gems.tags;/,gems.tags;/
 set hidden
-set backupdir=~/.vim/backup//
 set wildmenu wildmode=full
 set completeopt=longest,menuone
-set laststatus=2
+set laststatus=2 " Always show status line.
 set number
 set numberwidth=3
 set noacd
 set showcmd
-set tabstop=2
-set shiftwidth=2
+set tabstop=2 " Tabs are 2 spaces
+set shiftwidth=2 " Tabs under smart indent
 set expandtab
 set noea
-set mouse=a
 set ttymouse=xterm2
 set wildignore=*.png,*.jpg,*.xcf,*.wav,log/*,tmp/*,coverage/*
 " Enable autoselect clipboard
 set clipboard=autoselect,unnamed
+
+set history=256  " Number of things to remember in history.
+set autowrite  " Writes on make/shell commands
+set ruler  " Ruler on
+set showmatch  " Show matching brackets.
+" gvim specific
+set mousehide  " Hide mouse after chars type
+set mouse=a
 
 let mapleader=','
 
@@ -59,7 +66,7 @@ noremap Y y$
 au FileType coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Ruby settings
-au BufRead,BufNewFile Guardfile,Vagrantfile,*.arb,*.cr set ft=ruby
+au BufRead,BufNewFile Guardfile,Gemfile.personal,Vagrantfile,*.arb,*.cr set ft=ruby
 autocmd FileType ruby,eruby,scss,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " JST settings
@@ -117,11 +124,14 @@ vmap } s}
 vmap # s#
 nmap s ys
 
+" Add recently accessed projects menu (project plugin)
+set viminfo^=!
+
 
 " Autoformat json file. Requires `sudo cpan JSON::XS`
 map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
 
 " Mapping ESC in insert mode and command mode to double i
-imap ii <C-[>
-cmap ii <C-[>
+" imap ii <C-[>
+" cmap ii <C-[>
 
